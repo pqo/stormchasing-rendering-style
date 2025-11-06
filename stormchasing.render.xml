@@ -1,0 +1,107 @@
+<renderingStyle name="Storm Chasing" depends="LightRS" defaultColor="#ffffff" version="1">
+
+	<renderingConstant name="unpavedRoadColor" value="#999999"/>
+	<renderingConstant name="lowIntegrityRoadColor" value="#00ff00"/> <!-- I haven't seen any in the wild yet so make it really obvious for testing (TODO) -->
+	<renderingConstant name="residentialRoadLowZoomDayColor" value="#999999"/>
+	<renderingConstant name="residentialRoadLowZoomDayColor2" value="#999999"/>
+	<renderingConstant name="residentialRoadLowZoomNightColor" value="#999999"/>
+	<renderingConstant name="trackDayColor" value="#999999"/>
+	<renderingConstant name="trackNightColor" value="#999999"/>
+
+	<renderingAttribute name="motorwayRoadColor"> <!-- Interstates -->
+		<case nightMode="true" attrColorValue="#ff00cc"/>
+	</renderingAttribute>
+
+	<renderingAttribute name="trunkRoadColor"> <!-- Super-2 or 4-lane non-interstate highways -->
+		<case nightMode="true" attrColorValue="#ff0060"/>
+	</renderingAttribute>
+
+	<renderingAttribute name="secondaryRoadColor"> <!-- State highways -->
+		<!-- Don't show secondary roads when zoomed out as osmand_highway_integrity tag is only available in tiles used for zoom level 11+ -->
+		<!-- TODO skip rendering rather than render in white but I don't know how to do that -->
+		<case maxzoom="10" attrColorValue="#ffffff">
+			<apply_if nightMode="true" attrColorValue="#000000"/>
+		</case>
+
+		<case additional="osmand_highway_integrity=0" attrColorValue="#ff8000"/>
+		<case additional="osmand_highway_integrity=1" attrColorValue="#ff8000"/>
+		<case additional="osmand_highway_integrity=2" attrColorValue="$unpavedRoadColor"/> <!-- compacted -->
+		<case additional="osmand_highway_integrity=3" attrColorValue="$unpavedRoadColor"/>
+    <case additional="osmand_highway_integrity=4" attrColorValue="$unpavedRoadColor"/> <!-- gravel, unpaved -->
+		<case additional="osmand_highway_integrity=5" attrColorValue="$lowIntegrityRoadColor"/>
+		<case additional="osmand_highway_integrity=6" attrColorValue="$lowIntegrityRoadColor"/>
+		<case additional="osmand_highway_integrity=7" attrColorValue="$lowIntegrityRoadColor"/>
+		<case additional="osmand_highway_integrity=8" attrColorValue="$lowIntegrityRoadColor"/>
+		<case additional="osmand_highway_integrity=9" attrColorValue="$lowIntegrityRoadColor"/>
+		<case additional="osmand_highway_integrity=10" attrColorValue="$lowIntegrityRoadColor"/>
+
+		<!-- OR if untagged -->
+		<case attrColorValue="#ffffff" shadowRadius="2" shadowColor="#000000"> 
+			<apply_if nightMode="true" attrColorValue="#000000" shadowRadius="2" shadowColor="#ffffff"/>
+		</case>
+	</renderingAttribute>
+
+	<renderingAttribute name="tertiaryRoadColor"> <!-- County or gravel roads -->
+		<case additional="osmand_highway_integrity=0" attrColorValue="#ff8000"/>
+		<case additional="osmand_highway_integrity=1" attrColorValue="#ff8000"/>
+		<case additional="osmand_highway_integrity=2" attrColorValue="$unpavedRoadColor"/> <!-- compacted -->
+		<case additional="osmand_highway_integrity=3" attrColorValue="$unpavedRoadColor"/>
+    <case additional="osmand_highway_integrity=4" attrColorValue="$unpavedRoadColor"/> <!-- gravel, unpaved -->
+		<case additional="osmand_highway_integrity=5" attrColorValue="$lowIntegrityRoadColor"/>
+		<case additional="osmand_highway_integrity=6" attrColorValue="$lowIntegrityRoadColor"/>
+		<case additional="osmand_highway_integrity=7" attrColorValue="$lowIntegrityRoadColor"/>
+		<case additional="osmand_highway_integrity=8" attrColorValue="$lowIntegrityRoadColor"/>
+		<case additional="osmand_highway_integrity=9" attrColorValue="$lowIntegrityRoadColor"/>
+		<case additional="osmand_highway_integrity=10" attrColorValue="$lowIntegrityRoadColor"/>
+
+		<!-- OR if untagged -->
+		<case attrColorValue="#ffffff" shadowRadius="2" shadowColor="#000000">
+			<apply_if nightMode="true" attrColorValue="#000000" shadowRadius="2" shadowColor="#ffffff"/>
+		</case>
+	</renderingAttribute>
+
+	<renderingAttribute name="primaryRoadColor"> <!-- US Highways -->
+		<!-- Match primary road zoom-level visibility with secondary and tertiary roads -->
+		<case maxzoom="10" attrColorValue="#ffffff">
+			<apply_if nightMode="true" attrColorValue="#000000"/>
+		</case>
+
+		<case attrColorValue="#ff8000"/>
+	</renderingAttribute>
+
+	<renderingAttribute name="residentialRoadColor"> <!-- includes unclassified roads -->
+		<case additional="osmand_highway_integrity=0" attrColorValue="#ff8000"/>
+		<case additional="osmand_highway_integrity=1" attrColorValue="#ff8000"/>
+		<case additional="osmand_highway_integrity=2" attrColorValue="$unpavedRoadColor"/> <!-- compacted -->
+		<case additional="osmand_highway_integrity=3" attrColorValue="$unpavedRoadColor"/>
+    <case additional="osmand_highway_integrity=4" attrColorValue="$unpavedRoadColor"/> <!-- gravel, unpaved -->
+		<case additional="osmand_highway_integrity=5" attrColorValue="$lowIntegrityRoadColor"/>
+		<case additional="osmand_highway_integrity=6" attrColorValue="$lowIntegrityRoadColor"/>
+		<case additional="osmand_highway_integrity=7" attrColorValue="$lowIntegrityRoadColor"/>
+		<case additional="osmand_highway_integrity=8" attrColorValue="$lowIntegrityRoadColor"/>
+		<case additional="osmand_highway_integrity=9" attrColorValue="$lowIntegrityRoadColor"/>
+		<case additional="osmand_highway_integrity=10" attrColorValue="$lowIntegrityRoadColor"/>
+
+		<!-- OR if untagged -->
+		<case attrColorValue="$unpavedRoadColor"/> <!-- Style as unpaved as it's very unlikely that an untagged, unclassified road is paved -->
+	</renderingAttribute>
+
+	<renderingAttribute name="serviceRoadColor">
+		<case nightMode="true" attrColorValue="#663C3C">
+			<apply_if additional="construction=yes" attrColorValue="#492B2B"/>
+		</case>
+		<case attrColorValue="#888888">
+			<apply_if additional="construction=yes" attrColorValue="#CDCDCD"/>
+		</case>
+	</renderingAttribute>
+
+  <line>
+		<switch> <!-- Hide railway until zoom 13+ since they can look like roads below that zoom level -->
+			<case maxzoom="12" tag="railway" value="rail">
+				<apply color="#ffffff" color_2="#ffffff"/>
+			</case>
+		</switch>
+  </line>
+
+</renderingStyle>
+
