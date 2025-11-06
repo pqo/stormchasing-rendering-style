@@ -12,7 +12,8 @@ This is an OsmAnd rendering style optimized for storm chasing. It's been tested 
 ![Action shot of the Stormchasing rendering style](Screenshot_OsmAnd.jpg "Action shot of the Stormchasing rendering style")
 
 ## Installing
-Copy stormchasing.render.xml into the `Android/data/net.osmand/files/rendering` directory (or `net.osmand.plus` for OsmAnd plus and `net.osmand.dev` for OsmAnd nightly/beta) on the Android device (these files should be visible through any file manager, or when browsing files via USB).
+- Copy stormchasing.render.xml into the `Android/data/net.osmand/files/rendering` directory (or `net.osmand.plus` for OsmAnd plus and `net.osmand.dev` for OsmAnd nightly/beta) on the Android device (these files should be visible through any file manager, or when browsing files via USB).
+- Enable the style by going to Menu->Configure map->Map rendering->Map style and selecting the *Stormchasing* style
 
 ## How to update road surface information in the OSM data
 - Go to https://www.openstreetmap.org/ and log in or sign up
