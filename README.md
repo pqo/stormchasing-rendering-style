@@ -9,9 +9,10 @@ This is an OsmAnd rendering style optimized for storm chasing. It's been tested 
 - Trails that are likely impassable are rendered as dashed lines
 - Roads without surface integrity information are easily identified by a hollow rendering style. Please contribute to the underlying OSM data -- especially surface integrity! See instructions below on how to do this.
 
-## Installing modified rendering styles
-To test changes to these rendering styles, copy the modified files into the `Android/data/net.osmand/files/rendering`
-directory (or `net.osmand.plus` for OsmAnd plus and `net.osmand.dev` for OsmAnd nightly/beta) on the Android device (these files should be visible through any file manager, or when browsing files via USB).
+![Action shot of the Stormchasing rendering style](Screenshot_OsmAnd.jpg "Action shot of the Stormchasing rendering style")
+
+## Installing
+Copy stormchasing.render.xml into the `Android/data/net.osmand/files/rendering` directory (or `net.osmand.plus` for OsmAnd plus and `net.osmand.dev` for OsmAnd nightly/beta) on the Android device (these files should be visible through any file manager, or when browsing files via USB).
 
 ## How to update road surface information in the OSM data
 - Go to https://www.openstreetmap.org/ and log in or sign up
