@@ -24,11 +24,11 @@
 		</case>
 
 		<case additional="osmand_highway_integrity=0" attrColorValue="#ff8000"/>
-		<case additional="osmand_highway_integrity=1" attrColorValue="#ff8000"/>
+		<case additional="osmand_highway_integrity=1" attrColorValue="#ff8000"/> <!-- paved, concrete -->
 		<case additional="osmand_highway_integrity=2" attrColorValue="$unpavedRoadColor"/> <!-- compacted -->
-		<case additional="osmand_highway_integrity=3" attrColorValue="$unpavedRoadColor"/>
-    <case additional="osmand_highway_integrity=4" attrColorValue="$unpavedRoadColor"/> <!-- gravel, unpaved -->
-		<case additional="osmand_highway_integrity=5" attrColorValue="$lowIntegrityRoadColor"/>
+		<case additional="osmand_highway_integrity=3" attrColorValue="$unpavedRoadColor"/> <!-- dirt -->
+    	<case additional="osmand_highway_integrity=4" attrColorValue="$unpavedRoadColor"/> <!-- gravel, unpaved -->
+		<case additional="osmand_highway_integrity=5" attrColorValue="$lowIntegrityRoadColor"/> <!-- smoothness: bad -->
 		<case additional="osmand_highway_integrity=6" attrColorValue="$lowIntegrityRoadColor"/>
 		<case additional="osmand_highway_integrity=7" attrColorValue="$lowIntegrityRoadColor"/>
 		<case additional="osmand_highway_integrity=8" attrColorValue="$lowIntegrityRoadColor"/>
