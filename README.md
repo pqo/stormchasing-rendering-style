@@ -23,6 +23,9 @@ This is an OsmAnd rendering style optimized for storm chasing. It's been tested 
 
 NOTE: For a dirt surface, OsmAnd's [*calculateIntegrity* method](https://github.com/osmandapp/OsmAnd-tools/blob/master/java-tools/OsmAndMapCreatorUtilities/src/main/java/net/osmand/osm/MapRenderingTypesEncoder.java) considers dirt to be higher integrity than gravel. This is bad for chase navigation because dirt will quickly turn to impassable mud when wet. And the *mud* surface type is reserved for [roads that are muddy most of the time](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dmud). So for a dirt road that turns into a rutted, muddy road when wet, be sure to add the [*smoothness* tag](https://wiki.openstreetmap.org/wiki/Key:smoothness) and set the value to *bad* or worse. This will allow OsmAnd to visually differentiate between good gravel and poor dirt.
 
+## Known issues
+* *shadowRadius* (used for the hollow rendering style) isn't working in the Version 2 / OpenGL rendering engine. Be sure to set Settings->OsmAnd settings->Map rendering engine to Version 1
+
 ## Existing rendering styles
 **LightRS**
 * Distinguishes well between unclassified highway types (which is often unpaved but not always) and classified (which is often paved but not always)  
