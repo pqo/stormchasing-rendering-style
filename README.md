@@ -18,6 +18,7 @@ This is an OsmAnd rendering style optimized for storm chasing. It's been tested 
 ## How to update road surface information in the OSM data
 - Go to https://www.openstreetmap.org/ and log in or sign up
 - Zoom far enough into the map at the desired location to activate the *Edit* button
+- Select the features to edit (hold down shift key to multi-select)
 - Set *surface* drop-down to one of: paved or unpaved
 - For dirt (mud when wet), leave surface empty (must be *null*) and set tracktype to grade 5.
 
