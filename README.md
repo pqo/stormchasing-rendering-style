@@ -12,7 +12,7 @@ This is an OsmAnd rendering style optimized for storm chasing. It's been tested 
 ![Action shot of the Stormchasing rendering style](Screenshot_OsmAnd.jpg "Action shot of the Stormchasing rendering style")
 
 ## Installing
-- Open your OsmAnd data storage folder through any file manager or by browsing files via USB. You can find your data storage folder by going to Settings->OsmAnd settings->Data storage folder.
+- Open your OsmAnd data storage folder through any file manager or by browsing files via USB. You can find your data storage folder by going to Menu->Settings->OsmAnd settings->Data storage folder.
 - Now copy stormchasing.render.xml into the `rendering` subfolder. 
 - Enable the style by going to Menu->Configure map->Map rendering->Map style and selecting the *Stormchasing* style
 
@@ -25,7 +25,7 @@ This is an OsmAnd rendering style optimized for storm chasing. It's been tested 
 NOTE: For a dirt surface, OsmAnd's [*calculateIntegrity* method](https://github.com/osmandapp/OsmAnd-tools/blob/master/java-tools/OsmAndMapCreatorUtilities/src/main/java/net/osmand/osm/MapRenderingTypesEncoder.java) considers dirt to be higher integrity than gravel. This is bad for chase navigation because dirt will quickly turn to impassable mud when wet. And the *mud* surface type is reserved for [roads that are muddy most of the time](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dmud). So for a dirt road that turns into a rutted, muddy road when wet, be sure to add the [*smoothness* tag](https://wiki.openstreetmap.org/wiki/Key:smoothness) and set the value to *bad* or worse. This will allow OsmAnd to visually differentiate between good gravel and poor dirt.
 
 ## Known issues
-* *shadowRadius* (used for the hollow rendering style) isn't working in the Version 2 / OpenGL rendering engine. Be sure to set Settings->OsmAnd settings->Map rendering engine to Version 1
+* *shadowRadius* (used for the hollow rendering style) isn't working in the Version 2 / OpenGL rendering engine. Be sure to set Menu->Settings->OsmAnd settings->Map rendering engine to Version 1
 
 ## Existing rendering styles
 **LightRS**
