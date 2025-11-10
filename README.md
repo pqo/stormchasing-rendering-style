@@ -6,13 +6,14 @@ This is an OsmAnd rendering style optimized for storm chasing. It's been tested 
 - Roads with low surface integrity (gravel, dirt) are rendered in gray across zoom levels and road types.
 - Primary, secondary, and tertiary road types are all rendered starting at the same zoom level to quickly find paved navigation routes.
 - Local road types are rendered at the next zoom level for close range interception.
-- Trails that are likely impassable are rendered as dashed lines
+- Trails that are likely impassable and roads that are known to become muddy are rendered as dashed lines
 - Roads without surface integrity information are easily identified by a hollow rendering style. Please contribute to the underlying OSM data -- especially surface integrity! See instructions below on how to do this.
 
 ![Action shot of the Stormchasing rendering style](Screenshot_OsmAnd.jpg "Action shot of the Stormchasing rendering style")
 
 ## Installing
-- Copy stormchasing.render.xml into the `Android/data/net.osmand/files/rendering` directory (or `net.osmand.plus` for OsmAnd plus and `net.osmand.dev` for OsmAnd nightly/beta) on the Android device (these files should be visible through any file manager, or when browsing files via USB).
+- Open your OsmAnd data storage folder through any file manager by browsing files via USB. You can find your data storage folder by going to Settings->OsmAnd settings->Data storage folder.
+- Now copy stormchasing.render.xml into the `rendering` subfolder. 
 - Enable the style by going to Menu->Configure map->Map rendering->Map style and selecting the *Stormchasing* style
 
 ## How to update road surface information in the OSM data
