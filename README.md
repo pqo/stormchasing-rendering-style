@@ -6,7 +6,7 @@ This is an OsmAnd rendering style optimized for storm chasing. It's been tested 
 - Unpaved roads (gravel, dirt) are consistently rendered in gray regardless of zoom level or road type.
 - Primary, secondary, and tertiary road types are all rendered starting at zoom level 11 to quickly find paved navigation routes.
 - Local road types are rendered starting at zoom level 12 for close range interception.
-- Trails and roads that are likely to become muddy and/or impassable are rendered as dashed lines
+- Trails and roads that are likely to become muddy and/or impassable after heavy rain are rendered as dashed lines
 - Roads without surface integrity information are rendered in a hollow style. Please contribute to the underlying OSM data -- see instructions below on how to do this.
 
 ![Action shot of the Stormchasing rendering style](Screenshot_OsmAnd.jpg "Action shot of the Stormchasing rendering style")
