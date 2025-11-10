@@ -3,11 +3,11 @@ This is an OsmAnd rendering style optimized for storm chasing. It's been tested 
 
 **Key features**
 - Paved roads are rendered in bright colors for daytime readability.
-- Roads with low surface integrity (gravel, dirt) are rendered in gray across zoom levels and road types.
-- Primary, secondary, and tertiary road types are all rendered starting at the same zoom level to quickly find paved navigation routes.
-- Local road types are rendered at the next zoom level for close range interception.
-- Trails that are likely impassable and roads that are known to become muddy are rendered as dashed lines
-- Roads without surface integrity information are easily identified by a hollow rendering style. Please contribute to the underlying OSM data -- especially surface integrity! See instructions below on how to do this.
+- Unpaved roads (gravel, dirt) are consistently rendered in gray regardless of zoom level or road type.
+- Primary, secondary, and tertiary road types are all rendered starting at zoom level 11 to quickly find paved navigation routes.
+- Local road types are rendered starting at zoom level 12 for close range interception.
+- Trails and roads that are likely to become muddy and/or impassable after heavy rain are rendered as dashed lines
+- Roads without surface integrity information are rendered in a hollow style. Please contribute to the underlying OSM data -- see instructions below on how to do this.
 
 ![Action shot of the Stormchasing rendering style](Screenshot_OsmAnd.jpg "Action shot of the Stormchasing rendering style")
 
@@ -22,10 +22,10 @@ This is an OsmAnd rendering style optimized for storm chasing. It's been tested 
 - Select the features to edit (hold down shift key to multi-select)
 - Set [*surface*](https://wiki.openstreetmap.org/wiki/Key:surface) drop-down as appropriate. For example: asphalt, concrete, dirt, or gravel
 
-NOTE: For a dirt surface, OsmAnd's [*calculateIntegrity* method](https://github.com/osmandapp/OsmAnd-tools/blob/master/java-tools/OsmAndMapCreatorUtilities/src/main/java/net/osmand/osm/MapRenderingTypesEncoder.java) considers dirt to be higher integrity than gravel. This is bad for chase navigation because dirt will quickly turn to impassable mud when wet. And the *mud* surface type is reserved for [roads that are muddy most of the time](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dmud). So for a dirt road that turns into a rutted, muddy road when wet, be sure to add the [*smoothness* tag](https://wiki.openstreetmap.org/wiki/Key:smoothness) and set the value to *bad* or worse. This will allow OsmAnd to visually differentiate between good gravel and poor dirt.
+NOTE: The *mud* surface type is reserved for [roads that are muddy most of the time](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dmud). So for a road that turns rutted and muddy after heavy rain, be sure to add the [*smoothness* tag](https://wiki.openstreetmap.org/wiki/Key:smoothness) and set the value to *bad* or worse. This will allow OsmAnd to visually distinguish between roads that can be used after heavy rain and those that turn to mud.
 
 ## Known issues
-* *shadowRadius* (used for the hollow rendering style) isn't working in the Version 2 / OpenGL rendering engine. Be sure to set Menu->Settings->OsmAnd settings->Map rendering engine to Version 1
+* *shadowRadius* and *pathEffect* aren't working as overrides in this rendering style when using the Version 2 / OpenGL rendering engine. So be sure to set Menu->Settings->OsmAnd settings->Map rendering engine to Version 1 or the important visual distinctions won't work. If you know how to fix this please submit a PR.
 
 ## Existing rendering styles
 **LightRS**

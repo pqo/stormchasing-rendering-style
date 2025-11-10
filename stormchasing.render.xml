@@ -6,7 +6,7 @@
 	<renderingConstant name="residentialRoadLowZoomNightColor" value="#999999"/>
 	<renderingConstant name="trackDayColor" value="#999999"/>
 	<renderingConstant name="trackNightColor" value="#999999"/>
-	<renderingConstant name="difficultRoadPathEffect" value="10_15"/>
+	<renderingConstant name="difficultRoadPathEffect" value="8_12"/>
 
 	<renderingAttribute name="motorwayRoadColor"> <!-- Interstates -->
 		<case nightMode="true" attrColorValue="#ff00cc"/>
@@ -18,7 +18,7 @@
 
 	<renderingAttribute name="secondaryRoadColor"> <!-- State highways -->
 		<!-- Don't show secondary roads when zoomed out as osmand_highway_integrity tag is only available in tiles used for zoom level 11+ -->
-		<!-- TODO skip rendering rather than render in white but I don't know how to do that -->
+		<!-- TODO skip rendering rather than blend with background color if possible -->
 		<case maxzoom="10" attrColorValue="#ffffff">
 			<apply_if nightMode="true" attrColorValue="#000000"/>
 		</case>
@@ -26,9 +26,9 @@
 		<case additional="osmand_highway_integrity=0" attrColorValue="#ff8000"/>
 		<case additional="osmand_highway_integrity=1" attrColorValue="#ff8000"/> <!-- paved, concrete -->
 		<case additional="osmand_highway_integrity=2" attrColorValue="$unpavedRoadColor"/> <!-- compacted -->
-		<case additional="osmand_highway_integrity=3" attrColorValue="$unpavedRoadColor"/> <!-- dirt -->
+		<case additional="osmand_highway_integrity=3" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/> <!-- dirt -->
     	<case additional="osmand_highway_integrity=4" attrColorValue="$unpavedRoadColor"/> <!-- gravel, unpaved -->
-		<case additional="osmand_highway_integrity=5" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/> <!-- smoothness: bad -->
+		<case additional="osmand_highway_integrity=5" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
 		<case additional="osmand_highway_integrity=6" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
 		<case additional="osmand_highway_integrity=7" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
 		<case additional="osmand_highway_integrity=8" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
@@ -36,18 +36,18 @@
 		<case additional="osmand_highway_integrity=10" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
 
 		<!-- OR if untagged -->
-		<case attrColorValue="#ffffff" shadowRadius="2" shadowColor="#000000"> 
-			<apply_if nightMode="true" attrColorValue="#000000" shadowRadius="2" shadowColor="#ffffff"/>
+		<case shadowRadius="2" attrColorValue="#ffffff" shadowColor="#000000">
+			<apply_if nightMode="true" attrColorValue="#000000" shadowColor="#ffffff"/>
 		</case>
 	</renderingAttribute>
 
 	<renderingAttribute name="tertiaryRoadColor"> <!-- County or gravel roads -->
 		<case additional="osmand_highway_integrity=0" attrColorValue="#ff8000"/>
-		<case additional="osmand_highway_integrity=1" attrColorValue="#ff8000"/>
+		<case additional="osmand_highway_integrity=1" attrColorValue="#ff8000"/> <!-- paved, concrete -->
 		<case additional="osmand_highway_integrity=2" attrColorValue="$unpavedRoadColor"/> <!-- compacted -->
-		<case additional="osmand_highway_integrity=3" attrColorValue="$unpavedRoadColor"/> <!-- dirt -->
+		<case additional="osmand_highway_integrity=3" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/> <!-- dirt -->
     	<case additional="osmand_highway_integrity=4" attrColorValue="$unpavedRoadColor"/> <!-- gravel, unpaved -->
-		<case additional="osmand_highway_integrity=5" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/> <!-- smoothness: bad -->
+		<case additional="osmand_highway_integrity=5" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
 		<case additional="osmand_highway_integrity=6" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
 		<case additional="osmand_highway_integrity=7" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
 		<case additional="osmand_highway_integrity=8" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
@@ -55,13 +55,14 @@
 		<case additional="osmand_highway_integrity=10" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
 
 		<!-- OR if untagged -->
-		<case attrColorValue="#ffffff" shadowRadius="2" shadowColor="#000000">
-			<apply_if nightMode="true" attrColorValue="#000000" shadowRadius="2" shadowColor="#ffffff"/>
+		<case shadowRadius="2" attrColorValue="#ffffff" shadowColor="#000000">
+			<apply_if nightMode="true" attrColorValue="#000000" shadowColor="#ffffff"/>
 		</case>
 	</renderingAttribute>
 
 	<renderingAttribute name="primaryRoadColor"> <!-- US Highways -->
 		<!-- Match primary road zoom-level visibility with secondary and tertiary roads -->
+		<!-- TODO skip rendering rather than blend with background color if possible -->
 		<case maxzoom="10" attrColorValue="#ffffff">
 			<apply_if nightMode="true" attrColorValue="#000000"/>
 		</case>
@@ -71,11 +72,11 @@
 
 	<renderingAttribute name="residentialRoadColor"> <!-- includes unclassified roads -->
 		<case additional="osmand_highway_integrity=0" attrColorValue="#ff8000"/>
-		<case additional="osmand_highway_integrity=1" attrColorValue="#ff8000"/>
+		<case additional="osmand_highway_integrity=1" attrColorValue="#ff8000"/> <!-- paved, concrete -->
 		<case additional="osmand_highway_integrity=2" attrColorValue="$unpavedRoadColor"/> <!-- compacted -->
-		<case additional="osmand_highway_integrity=3" attrColorValue="$unpavedRoadColor"/> <!-- dirt -->
+		<case additional="osmand_highway_integrity=3" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/> <!-- dirt -->
     	<case additional="osmand_highway_integrity=4" attrColorValue="$unpavedRoadColor"/> <!-- gravel, unpaved -->
-		<case additional="osmand_highway_integrity=5" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/> <!-- smoothness: bad -->
+		<case additional="osmand_highway_integrity=5" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
 		<case additional="osmand_highway_integrity=6" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
 		<case additional="osmand_highway_integrity=7" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
 		<case additional="osmand_highway_integrity=8" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
@@ -95,13 +96,13 @@
 		</case>
 	</renderingAttribute>
 
-  <line>
+	<line>
 		<switch> <!-- Hide railway until zoom 13+ since they can look like roads below that zoom level -->
 			<case maxzoom="12" tag="railway" value="rail">
 				<apply color="#ffffff" color_2="#ffffff"/>
 			</case>
 		</switch>
-  </line>
+	</line>
 
 </renderingStyle>
 
