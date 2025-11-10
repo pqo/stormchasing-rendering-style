@@ -12,7 +12,7 @@ This is an OsmAnd rendering style optimized for storm chasing. It's been tested 
 ![Action shot of the Stormchasing rendering style](Screenshot_OsmAnd.jpg "Action shot of the Stormchasing rendering style")
 
 ## Installing
-- Open your OsmAnd data storage folder through any file manager by browsing files via USB. You can find your data storage folder by going to Settings->OsmAnd settings->Data storage folder.
+- Open your OsmAnd data storage folder through any file manager or by browsing files via USB. You can find your data storage folder by going to Settings->OsmAnd settings->Data storage folder.
 - Now copy stormchasing.render.xml into the `rendering` subfolder. 
 - Enable the style by going to Menu->Configure map->Map rendering->Map style and selecting the *Stormchasing* style
 
