@@ -22,7 +22,7 @@ This is an OsmAnd rendering style optimized for storm chasing. It's been tested 
 - Select the features to edit (hold down shift key to multi-select)
 - Set [*surface*](https://wiki.openstreetmap.org/wiki/Key:surface) drop-down as appropriate. For example: asphalt, concrete, dirt, or gravel
 
-NOTE: The *mud* surface type is reserved for [roads that are muddy most of the time](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dmud). So for a gravel road that turns into a rutted muddy road after heavy rain, be sure to add the [*smoothness* tag](https://wiki.openstreetmap.org/wiki/Key:smoothness) and set the value to *bad* or worse. This will allow OsmAnd to visually distinguish between gravel roads that can be used after heavy rain and those that turn to mud.
+NOTE: The *mud* surface type is reserved for [roads that are muddy most of the time](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dmud). So for a road that turns rutted and muddy after heavy rain, be sure to add the [*smoothness* tag](https://wiki.openstreetmap.org/wiki/Key:smoothness) and set the value to *bad* or worse. This will allow OsmAnd to visually distinguish between gravel roads that can be used after heavy rain and those that turn to mud.
 
 ## Known issues
 * *shadowRadius* and *pathEffect* aren't working as overrides in this rendering style when using the Version 2 / OpenGL rendering engine. So be sure to set Menu->Settings->OsmAnd settings->Map rendering engine to Version 1 or the important visual distinctions won't work. If you know how to fix this please submit a PR.
