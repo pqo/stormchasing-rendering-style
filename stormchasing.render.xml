@@ -1,12 +1,12 @@
 <renderingStyle name="Storm Chasing" depends="LightRS" defaultColor="#ffffff" version="1">
 
 	<renderingConstant name="unpavedRoadColor" value="#999999"/>
-	<renderingConstant name="lowIntegrityRoadColor" value="#00ff00"/> <!-- I haven't seen any in the wild yet so make it really obvious for testing (TODO) -->
 	<renderingConstant name="residentialRoadLowZoomDayColor" value="#999999"/>
 	<renderingConstant name="residentialRoadLowZoomDayColor2" value="#999999"/>
 	<renderingConstant name="residentialRoadLowZoomNightColor" value="#999999"/>
 	<renderingConstant name="trackDayColor" value="#999999"/>
 	<renderingConstant name="trackNightColor" value="#999999"/>
+	<renderingConstant name="difficultRoadPathEffect" value="10_15"/>
 
 	<renderingAttribute name="motorwayRoadColor"> <!-- Interstates -->
 		<case nightMode="true" attrColorValue="#ff00cc"/>
@@ -28,12 +28,12 @@
 		<case additional="osmand_highway_integrity=2" attrColorValue="$unpavedRoadColor"/> <!-- compacted -->
 		<case additional="osmand_highway_integrity=3" attrColorValue="$unpavedRoadColor"/> <!-- dirt -->
     	<case additional="osmand_highway_integrity=4" attrColorValue="$unpavedRoadColor"/> <!-- gravel, unpaved -->
-		<case additional="osmand_highway_integrity=5" attrColorValue="$lowIntegrityRoadColor"/> <!-- smoothness: bad -->
-		<case additional="osmand_highway_integrity=6" attrColorValue="$lowIntegrityRoadColor"/>
-		<case additional="osmand_highway_integrity=7" attrColorValue="$lowIntegrityRoadColor"/>
-		<case additional="osmand_highway_integrity=8" attrColorValue="$lowIntegrityRoadColor"/>
-		<case additional="osmand_highway_integrity=9" attrColorValue="$lowIntegrityRoadColor"/>
-		<case additional="osmand_highway_integrity=10" attrColorValue="$lowIntegrityRoadColor"/>
+		<case additional="osmand_highway_integrity=5" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/> <!-- smoothness: bad -->
+		<case additional="osmand_highway_integrity=6" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
+		<case additional="osmand_highway_integrity=7" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
+		<case additional="osmand_highway_integrity=8" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
+		<case additional="osmand_highway_integrity=9" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
+		<case additional="osmand_highway_integrity=10" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
 
 		<!-- OR if untagged -->
 		<case attrColorValue="#ffffff" shadowRadius="2" shadowColor="#000000"> 
@@ -45,14 +45,14 @@
 		<case additional="osmand_highway_integrity=0" attrColorValue="#ff8000"/>
 		<case additional="osmand_highway_integrity=1" attrColorValue="#ff8000"/>
 		<case additional="osmand_highway_integrity=2" attrColorValue="$unpavedRoadColor"/> <!-- compacted -->
-		<case additional="osmand_highway_integrity=3" attrColorValue="$unpavedRoadColor"/>
-    <case additional="osmand_highway_integrity=4" attrColorValue="$unpavedRoadColor"/> <!-- gravel, unpaved -->
-		<case additional="osmand_highway_integrity=5" attrColorValue="$lowIntegrityRoadColor"/>
-		<case additional="osmand_highway_integrity=6" attrColorValue="$lowIntegrityRoadColor"/>
-		<case additional="osmand_highway_integrity=7" attrColorValue="$lowIntegrityRoadColor"/>
-		<case additional="osmand_highway_integrity=8" attrColorValue="$lowIntegrityRoadColor"/>
-		<case additional="osmand_highway_integrity=9" attrColorValue="$lowIntegrityRoadColor"/>
-		<case additional="osmand_highway_integrity=10" attrColorValue="$lowIntegrityRoadColor"/>
+		<case additional="osmand_highway_integrity=3" attrColorValue="$unpavedRoadColor"/> <!-- dirt -->
+    	<case additional="osmand_highway_integrity=4" attrColorValue="$unpavedRoadColor"/> <!-- gravel, unpaved -->
+		<case additional="osmand_highway_integrity=5" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/> <!-- smoothness: bad -->
+		<case additional="osmand_highway_integrity=6" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
+		<case additional="osmand_highway_integrity=7" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
+		<case additional="osmand_highway_integrity=8" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
+		<case additional="osmand_highway_integrity=9" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
+		<case additional="osmand_highway_integrity=10" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
 
 		<!-- OR if untagged -->
 		<case attrColorValue="#ffffff" shadowRadius="2" shadowColor="#000000">
@@ -73,14 +73,14 @@
 		<case additional="osmand_highway_integrity=0" attrColorValue="#ff8000"/>
 		<case additional="osmand_highway_integrity=1" attrColorValue="#ff8000"/>
 		<case additional="osmand_highway_integrity=2" attrColorValue="$unpavedRoadColor"/> <!-- compacted -->
-		<case additional="osmand_highway_integrity=3" attrColorValue="$unpavedRoadColor"/>
-    <case additional="osmand_highway_integrity=4" attrColorValue="$unpavedRoadColor"/> <!-- gravel, unpaved -->
-		<case additional="osmand_highway_integrity=5" attrColorValue="$lowIntegrityRoadColor"/>
-		<case additional="osmand_highway_integrity=6" attrColorValue="$lowIntegrityRoadColor"/>
-		<case additional="osmand_highway_integrity=7" attrColorValue="$lowIntegrityRoadColor"/>
-		<case additional="osmand_highway_integrity=8" attrColorValue="$lowIntegrityRoadColor"/>
-		<case additional="osmand_highway_integrity=9" attrColorValue="$lowIntegrityRoadColor"/>
-		<case additional="osmand_highway_integrity=10" attrColorValue="$lowIntegrityRoadColor"/>
+		<case additional="osmand_highway_integrity=3" attrColorValue="$unpavedRoadColor"/> <!-- dirt -->
+    	<case additional="osmand_highway_integrity=4" attrColorValue="$unpavedRoadColor"/> <!-- gravel, unpaved -->
+		<case additional="osmand_highway_integrity=5" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/> <!-- smoothness: bad -->
+		<case additional="osmand_highway_integrity=6" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
+		<case additional="osmand_highway_integrity=7" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
+		<case additional="osmand_highway_integrity=8" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
+		<case additional="osmand_highway_integrity=9" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
+		<case additional="osmand_highway_integrity=10" attrColorValue="$unpavedRoadColor" pathEffect="$difficultRoadPathEffect"/>
 
 		<!-- OR if untagged -->
 		<case attrColorValue="$unpavedRoadColor"/> <!-- Style as unpaved as it's very unlikely that an untagged, unclassified road is paved -->
